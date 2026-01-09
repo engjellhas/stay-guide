@@ -1,31 +1,13 @@
 import FadeIn from "../animations/FadeIn";
+import Image from "next/image";
+import { Button } from "@/components/ui/Button";
 
 export function Features() {
-  const features = [
+  const secondaryFeatures = [
     {
-      title: "Voice-First Responses",
+      title: "Smart Home Sync",
       description:
-        "Guests just speak naturally. No apps to download, no huge PDF manuals to read on a phone screen.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Smart Home Integration",
-      description:
-        'Connects with Nest, Ecobee, and Yale. "Hey StayGuide, set the temperature to 72 degrees."',
+        "Connects with Nest, Ecobee, and Yale. Control temperature and locks with voice.",
       icon: (
         <svg
           className="w-6 h-6"
@@ -43,9 +25,9 @@ export function Features() {
       ),
     },
     {
-      title: "Local Everything",
+      title: "Local Recommendations",
       description:
-        "Recommend your favorite hidden gems, not just the tourist traps on Google Maps.",
+        "Curate your own guide to the best coffee, food, and hidden gems in the neighborhood.",
       icon: (
         <svg
           className="w-6 h-6"
@@ -69,29 +51,9 @@ export function Features() {
       ),
     },
     {
-      title: "Interaction Analytics",
+      title: "Emergency Alerts",
       description:
-        "See what guests are asking about most frequently. Identify gaps in your listing details.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Emergency Escalation",
-      description:
-        'If a guest says "water leak" or "lockout", you get an instant SMS alert.',
+        "Instant SMS notifications when guests casually mention 'leak', 'fire', or 'locked out'.",
       icon: (
         <svg
           className="w-6 h-6"
@@ -109,9 +71,9 @@ export function Features() {
       ),
     },
     {
-      title: "Multi-Language Support",
+      title: "Multi-Language",
       description:
-        "Speak your guest's language. Instantly translates questions and answers for international travelers.",
+        "Instant translation for international guests. Speak in English, they hear it in Spanish.",
       icon: (
         <svg
           className="w-6 h-6"
@@ -131,28 +93,158 @@ export function Features() {
   ];
 
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="features" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
-            Everything your listing needs to be{" "}
-            <span className="text-primary">5-star ready</span>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-foreground">
+            Everything you need to <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">
+              Run on Autopilot
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            We&apos;ve thought of everything so you don&apos;t have to.
+          <p className="text-xl text-muted-foreground font-light">
+            Powerful tools to manage your property, delight guests, and save
+            time—all without lifting a finger.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+
+        {/* Feature Highlight 1: Mobile/Voice */}
+        <div className="mb-24">
+          <FadeIn>
+            <div className="bg-[#f3f9f9] rounded-[2.5rem] p-8 md:p-12 lg:p-0 overflow-hidden border border-gray-100">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="lg:p-16 text-left">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                    Guest messaging that feels human.
+                  </h3>
+                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Our AI understands context, tone, and urgency. It replies to
+                    &quot;How&apos;s the parking?&quot; instantly with your
+                    specific instructions, adding a personal touch that guests
+                    love.
+                  </p>
+                  <ul className="space-y-4 mb-8">
+                    {[
+                      "Instant responses 24/7",
+                      "Trained on your specific house manual",
+                      "Human takeover whenever you want",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-gray-700"
+                      >
+                        <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">
+                          ✓
+                        </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button variant="outline" className="rounded-full">
+                    See Conversation Samples
+                  </Button>
+                </div>
+                <div className="relative h-[200px] lg:h-[600px] flex items-end justify-center pt-8 px-8 rounded-b-[2.5rem] lg:rounded-l-none lg:rounded-r-[2.5rem]">
+                  <div className="relative w-64 md:w-120 overflow-hidden transform translate-y-10 lg:translate-y-20 hover:-translate-y-4 transition-transform duration-500">
+                    <Image
+                      src="/artifacts/mobile_app_mockup.png"
+                      alt="Mobile App Interface"
+                      width={400}
+                      height={800}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Feature Highlight 2: Analytics/Dashboard */}
+        <div className="mb-24">
+          <FadeIn delay={0.2}>
+            <div className="bg-gray-900 rounded-[2.5rem] p-8 md:p-12 lg:p-0 overflow-hidden border border-gray-800 text-white relative group">
+              {/* Background gradient blob */}
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Image Side (Left on Desktop) */}
+                <div className="relative h-[300px] lg:h-[550px] flex items-center justify-center p-8 order-2 lg:order-1">
+                  <div className="relative w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-white/10 transform lg:rotate-3 group-hover:rotate-0 transition-transform duration-700">
+                    <Image
+                      src="/artifacts/vibrant_host_dashboard_mockup.png"
+                      alt="Analytics Dashboard"
+                      width={800}
+                      height={600}
+                      className="object-cover w-full h-full opacity-90 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                </div>
+
+                {/* Text Side */}
+                <div className="lg:p-16 text-left order-1 lg:order-2 relative z-10">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center mb-6">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                    Insights that boost revenue.
+                  </h3>
+                  <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                    Know exactly what your guests are experiencing. Track
+                    satisfaction scores, response times, and identify missing
+                    amenities that could boost your listing ranking.
+                  </p>
+                  <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full h-12 px-8">
+                    View Your Dashboard
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Secondary Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {secondaryFeatures.map((feature, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <div className="p-6 rounded-2xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-lg transition-all duration-300 group h-full">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+              <div className="p-6 rounded-3xl border border-gray-100 bg-white hover:shadow-xl hover:shadow-gray-100/50 transition-all duration-300 group h-full hover:-translate-y-1">
+                <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-gray-900 mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                <h3 className="text-lg font-bold mb-2 text-foreground">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             </FadeIn>
           ))}

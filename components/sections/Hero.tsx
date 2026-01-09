@@ -1,194 +1,234 @@
 import { Button } from "@/components/ui/Button";
 import BlurText from "@/components/BlurText";
+import FadeIn from "@/components/animations/FadeIn";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 md:pt-36 md:pb-40">
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32 lg:min-h-screen flex items-center">
       {/* Dreamy Gradient Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 -z-10"
         style={{ backgroundImage: "url('/assets/dreamy-bg.png')" }}
       />
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] -z-10" />
 
-      {/* Overlay for better text readability if needed */}
-      <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px] -z-10" />
+      {/* Decorative blobs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200/30 rounded-full blur-[100px] -z-10 mix-blend-multiply" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-lime-200/30 rounded-full blur-[100px] -z-10 mix-blend-multiply" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-10">
-          <div className="inline-flex items-center rounded-full border border-white/40 bg-white/60 backdrop-blur-md px-4 py-1.5 text-sm font-medium text-gray-800 shadow-sm animate-fade-in-up">
-            {/* <span className="flex h-2 w-2 rounded-full bg-[#FF385C] mr-2 animate-pulse shadow-[0_0_8px_rgba(255,56,92,0.5)]"></span> */}
-            Made for Superhosters
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <BlurText
-              text="The AI Voice Concierge for Vacation Rentals"
-              delay={50}
-              animateBy="words"
-              direction="top"
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-2 drop-shadow-sm justify-center"
-            />
-          </div>
-
-          <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-light">
-            Stop answering &quot;What&apos;s the WiFi password?&quot; 24/7.
-            StayGuide handles guest questions instantly with voice-first AI.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center pt-2">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto h-14 px-10 text-xl bg-[#FF385C] hover:bg-[#D90B3E] text-white shadow-xl shadow-[#FF385C]/30 rounded-full transition-transform hover:scale-105"
-            >
-              Get Started for Free
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto h-14 px-10 text-xl border-white/50 bg-white/40 hover:bg-white/60 backdrop-blur-md text-gray-900 rounded-full transition-all"
-            >
-              View Personal Demo
-            </Button>
-          </div>
-
-          {/* <div className="pt-8 flex items-center justify-center gap-3 text-sm text-gray-600 font-medium">
-            <div className="flex -space-x-3">
-              <div className="h-8 w-8 rounded-full bg-gray-200 border-2 border-white shadow-sm" />
-              <div className="h-8 w-8 rounded-full bg-gray-300 border-2 border-white shadow-sm" />
-              <div className="h-8 w-8 rounded-full bg-gray-400 border-2 border-white shadow-sm" />
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left Column: Text Content */}
+          <FadeIn
+            direction="right"
+            className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
+          >
+            <div className="inline-flex items-center rounded-full border border-primary/10 bg-white/50 backdrop-blur-md px-4 py-1.5 text-sm font-medium text-primary shadow-sm mb-8">
+              <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+              The #1 AI Concierge for Hosts
             </div>
-            <p>
-              Trusted by <span className="text-gray-900 font-bold">500+</span>{" "}
-              superhosts
+
+            <div className="relative group">
+              <BlurText
+                text="Maximize Your Rental Potential"
+                delay={50}
+                animateBy="words"
+                direction="top"
+                className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1] mb-6 drop-shadow-sm"
+              />
+              <div className="absolute -z-10 -top-8 -left-8 w-24 h-24 bg-yellow-200/50 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500" />
+            </div>
+
+            <p className="text-xl text-gray-600 leading-relaxed font-normal mb-10 max-w-lg mx-auto lg:mx-0">
+              Automate guest communication, boost reviews, and save 20+ hours a
+              week with your own AI voice assistant.
             </p>
-          </div> */}
-        </div>
 
-        {/* 3D Glass Dashboard Mockup */}
-        <div className="mt-20 relative mx-auto max-w-6xl perspective-1000">
-          <div className="relative transform transition-all duration-700 hover:rotate-x-2 hover:translate-y-[-10px] group">
-            {/* Main Dashboard Card */}
-            <div className="bg-white rounded-3xl shadow-2xl border border-white/60 p-6 md:p-8 aspect-[16/9] relative overflow-hidden backdrop-blur-sm">
-              {/* Header */}
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF385C] to-rose-600 flex items-center justify-center text-white font-bold shadow-lg shadow-[#FF385C]/30">
-                    <svg
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">
-                      StayGuide Dashboard
-                    </h3>
-                    <p className="text-sm text-gray-500">Welcome back, Sarah</p>
-                  </div>
-                </div>
-                <div className="flex gap-2">
-                  <div className="w-8 h-8 rounded-full bg-gray-100 border border-gray-200"></div>
-                  <div className="w-8 h-8 rounded-full bg-gray-100 border border-gray-200"></div>
-                </div>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <Button
+                size="lg"
+                className="h-16 px-8 text-lg font-semibold bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20 rounded-full transition-all hover:-translate-y-1 w-full sm:w-auto"
+              >
+                Start Free Trial
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-16 px-8 text-lg font-semibold border-gray-200 bg-white/80 hover:bg-white text-gray-800 rounded-full transition-all hover:shadow-lg w-full sm:w-auto"
+              >
+                Watch Demo
+              </Button>
+            </div>
 
-              {/* Stats Grid */}
-              <div className="grid grid-cols-4 gap-4 mb-8">
-                {[
-                  {
-                    label: "Active Guests",
-                    value: "24",
-                    color: "bg-blue-50 text-blue-600",
-                  },
-                  {
-                    label: "Queries Solved",
-                    value: "156",
-                    color: "bg-green-50 text-green-600",
-                  },
-                  {
-                    label: "Avg Response",
-                    value: "0.2s",
-                    color: "bg-purple-50 text-purple-600",
-                  },
-                  {
-                    label: "Happiness",
-                    value: "99%",
-                    color: "bg-rose-50 text-[#FF385C]",
-                  },
-                ].map((stat, i) => (
+            <div className="mt-12 flex items-center justify-center lg:justify-start gap-4 text-sm font-medium text-gray-500">
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="bg-gray-50/50 rounded-2xl p-4 border border-gray-100 group/card hover:bg-white hover:shadow-lg transition-all"
-                  >
-                    <p className="text-sm text-gray-500 mb-1">{stat.label}</p>
-                    <p
-                      className={`text-2xl font-bold ${
-                        stat.color.split(" ")[1]
-                      }`}
-                    >
-                      {stat.value}
-                    </p>
-                  </div>
+                    className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 shadow-sm overflow-hidden bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url('https://i.pravatar.cc/100?img=${
+                        i + 10
+                      }')`,
+                    }}
+                  />
                 ))}
               </div>
+              <div className="flex flex-col items-start">
+                <div className="flex items-center gap-1 text-yellow-500">
+                  {"★".repeat(5)}
+                </div>
+                <span className="text-xs">Trusted by 2,000+ hosts</span>
+              </div>
+            </div>
+          </FadeIn>
 
-              {/* Main Content Area */}
-              <div className="grid grid-cols-3 gap-6 h-full">
-                {/* Chat Column */}
-                <div className="col-span-2 bg-gray-50/80 rounded-2xl border border-gray-100 p-4 h-64 overflow-hidden relative">
-                  <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-gray-50 to-transparent z-10" />
-                  <div className="space-y-3 mt-2">
-                    <div className="flex gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gray-200 shrink-0" />
-                      <div className="bg-white p-3 rounded-2xl rounded-tl-none text-sm text-gray-600 shadow-sm border border-gray-100 max-w-[80%]">
-                        What is the checkout time for the loft?
+          {/* Right Column: Interactive UI Mockup */}
+          <FadeIn
+            direction="left"
+            delay={0.2}
+            className="relative z-10 w-full max-w-[500px] lg:max-w-none mx-auto"
+          >
+            <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[600px] w-full">
+              {/* Glass Dashboard Container */}
+              <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-indigo-500/10 border border-white/60 backdrop-blur-xl bg-white/80 transform hover:scale-[1.01] transition-all duration-700 flex flex-col">
+                {/* Header Strip */}
+                <div className="p-5 border-b border-gray-100 flex items-center justify-between bg-white/40">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <svg
+                        className="w-6 h-6 text-primary"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-sm">
+                        AI Concierge
+                      </h3>
+                      <p className="text-[10px] text-green-500 font-bold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        Monitoring Beach Loft
+                      </p>
+                    </div>
+                  </div>
+                  <div className="hidden sm:flex -space-x-2">
+                    {[33, 34, 35].map((img) => (
+                      <div
+                        key={img}
+                        className="w-8 h-8 rounded-full border-2 border-white bg-gray-100 overflow-hidden shadow-sm"
+                      >
+                        <img
+                          src={`https://i.pravatar.cc/100?img=${img}`}
+                          alt="User"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Conversation Feed */}
+                <div className="flex-1 p-6 space-y-6 overflow-hidden bg-linear-to-b from-transparent to-gray-50/20">
+                  {/* Guest Entry */}
+                  <div className="flex gap-3 max-w-[85%] animate-fadeIn">
+                    <div className="w-8 h-8 rounded-full bg-blue-100 shrink-0 overflow-hidden border border-blue-200">
+                      <img
+                        src="https://i.pravatar.cc/100?img=33"
+                        alt="Guest"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="bg-white p-4 rounded-2xl rounded-tl-none shadow-xs border border-gray-100">
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        Hi! What's the Wi-Fi password and checkout time?
+                      </p>
+                      <span className="text-[10px] text-gray-400 mt-2 block font-medium">
+                        Guest • 11:30 AM
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* AI Response Card */}
+                  <div className="flex gap-3 max-w-[92%] ml-auto flex-row-reverse animate-fadeIn [animation-delay:0.2s]">
+                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0 border border-primary/30">
+                      <span className="text-[10px] font-black text-primary">
+                        AI
+                      </span>
+                    </div>
+                    <div className="bg-primary text-white p-4 rounded-2xl rounded-tr-none shadow-lg shadow-primary/20 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -mr-8 -mt-8 blur-2xl" />
+                      <p className="text-sm leading-relaxed relative z-10">
+                        Welcome! 🌊
+                        <br />
+                        <br />• <span className="font-semibold">
+                          Wi-Fi:
+                        </span>{" "}
+                        BeachGlow_Host
+                        <br />• <span className="font-semibold">
+                          Pass:
+                        </span>{" "}
+                        StayHappy2026
+                        <br />• <span className="font-semibold">
+                          Checkout:
+                        </span>{" "}
+                        11:00 AM
+                      </p>
+                      <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between">
+                        <span className="text-[9px] font-medium opacity-80">
+                          Ref: House Manual
+                        </span>
+                        <span className="text-[9px] font-bold bg-white/20 px-1.5 py-0.5 rounded">
+                          INSTANT
+                        </span>
                       </div>
                     </div>
-                    <div className="flex gap-3 flex-row-reverse">
-                      <div className="w-8 h-8 rounded-full bg-[#FF385C]/10 flex items-center justify-center shrink-0">
-                        <div className="w-2 h-2 rounded-full bg-[#FF385C]" />
-                      </div>
-                      <div className="bg-[#FF385C] p-3 rounded-2xl rounded-tr-none text-sm text-white shadow-md shadow-[#FF385C]/20 max-w-[80%]">
-                        Checkout is at 11:00 AM. Would you like me to request a
-                        late checkout for you?
-                      </div>
+                  </div>
+
+                  {/* Typing Indicator */}
+                  <div className="flex gap-3 opacity-30 mt-4">
+                    <div className="w-8 h-8 rounded-full bg-gray-200" />
+                    <div className="bg-gray-100 h-10 w-20 rounded-2xl flex items-center justify-center gap-1">
+                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" />
+                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce [animation-delay:0.2s]" />
+                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce [animation-delay:0.4s]" />
                     </div>
                   </div>
                 </div>
 
-                {/* Sidebar Column */}
-                <div className="space-y-3">
-                  <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
-                    <div className="h-2 w-20 bg-gray-100 rounded mb-2" />
-                    <div className="h-10 w-full bg-gray-50 rounded-xl" />
+                {/* Bottom Stats Tray */}
+                <div className="px-6 py-5 bg-white border-t border-gray-50 flex items-center justify-around">
+                  <div className="text-center">
+                    <p className="text-[10px] uppercase tracking-tight text-gray-400 font-bold mb-1">
+                      Time Saved
+                    </p>
+                    <p className="text-lg font-extrabold text-primary">
+                      12h/wk
+                    </p>
                   </div>
-                  <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
-                    <div className="h-2 w-20 bg-gray-100 rounded mb-2" />
-                    <div className="flex gap-2">
-                      <div className="h-8 w-8 bg-gray-100 rounded-full" />
-                      <div className="h-8 w-8 bg-gray-100 rounded-full" />
-                      <div className="h-8 w-8 bg-gray-100 rounded-full" />
-                    </div>
+                  <div className="w-px h-8 bg-gray-100" />
+                  <div className="text-center">
+                    <p className="text-[10px] uppercase tracking-tight text-gray-400 font-bold mb-1">
+                      Rating
+                    </p>
+                    <p className="text-lg font-extrabold text-gray-900">5.0★</p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Elements (Glass Decor) */}
-              <div className="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-[#FF385C]/20 to-purple-500/20 blur-3xl rounded-full pointer-events-none" />
-              <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-gradient-to-tr from-blue-500/20 to-teal-500/20 blur-3xl rounded-full pointer-events-none" />
+              {/* Floating accents */}
+              <div className="absolute top-1/4 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+              <div className="absolute bottom-1/4 -left-12 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000" />
             </div>
-          </div>
-
-          {/* Ambient Glow */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-rose-400/20 to-purple-400/20 rounded-[2rem] blur-3xl -z-10" />
+          </FadeIn>
         </div>
       </div>
     </section>
