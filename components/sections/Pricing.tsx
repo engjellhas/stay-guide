@@ -50,89 +50,79 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-white relative">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[128px] -z-10" />
-
+    <section id="pricing" className="py-32 bg-white relative">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
-            Simple, transparent pricing
+        <div className="text-center max-w-4xl mx-auto mb-24">
+          <h2 className="text-5xl md:text-7xl title-display mb-8 text-[#222222]">
+            Simple, honest pricing.
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Pays for itself with one saved late-night call.
+          <p className="text-xl md:text-2xl text-secondary max-w-2xl mx-auto">
+            Pays for itself with a single saved late-night guest call.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
           {plans.map((plan, index) => (
-            <FadeIn key={index} delay={index * 0.15}>
+            <FadeIn key={index} delay={index * 0.1} direction="up">
               <div
-                className={`rounded-2xl p-8 border flex flex-col relative transition-all duration-300 h-full ${
+                className={`rounded-[3rem] p-10 md:p-12 border flex flex-col relative transition-all duration-300 h-full ${
                   plan.popular
-                    ? "border-primary bg-white shadow-xl shadow-primary/10 scale-105 z-10"
-                    : "border-gray-200 bg-gray-50/50 hover:bg-white hover:shadow-lg"
+                    ? "border-[#222222] bg-white shadow-2xl scale-[1.02] z-10"
+                    : "border-black/5 bg-gray-50/50 hover:bg-white"
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-rose-600 text-white text-xs font-bold uppercase tracking-wide py-1 px-4 rounded-full shadow-md">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#222222] text-white text-[11px] font-bold uppercase tracking-widest py-1.5 px-5 rounded-full">
                     Most Popular
                   </div>
                 )}
 
-                <div className="mb-8">
-                  <h3 className="text-xl font-bold mb-2 text-foreground">
+                <div className="mb-10">
+                  <h3 className="text-2xl font-semibold mb-3 text-[#222222]">
                     {plan.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground h-10">
-                    {plan.description}
-                  </p>
+                  <p className="text-base text-secondary">{plan.description}</p>
                 </div>
 
-                <div className="mb-8">
-                  <div className="flex items-baseline">
-                    <span className="text-4xl font-bold text-foreground">
-                      {plan.price}
-                    </span>
-                    <span className="text-muted-foreground ml-1">
-                      {plan.period}
-                    </span>
-                  </div>
+                <div className="mb-10 flex items-baseline gap-1">
+                  <span className="text-5xl font-semibold text-[#222222]">
+                    {plan.price}
+                  </span>
+                  <span className="text-secondary font-medium">
+                    {plan.period}
+                  </span>
                 </div>
 
-                <ul className="space-y-4 mb-8 flex-1">
+                <ul className="space-y-5 mb-12 flex-1">
                   {plan.features.map((feature, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 text-sm text-gray-600"
+                      className="flex items-start gap-4 text-base text-[#222222]"
                     >
-                      <svg
-                        className={`w-5 h-5 shrink-0 ${
-                          plan.popular ? "text-primary" : "text-gray-400"
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      {feature}
+                      <div className="w-5 h-5 rounded-full bg-black/5 flex items-center justify-center shrink-0 mt-0.5">
+                        <svg
+                          className="w-3 h-3 text-[#222222]"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={3}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span className="font-medium">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Button
                   variant={plan.popular ? "primary" : "outline"}
-                  className={`w-full ${
-                    plan.popular
-                      ? "bg-primary hover:bg-primary/90 text-white"
-                      : "border-gray-300 hover:bg-gray-50 text-foreground"
-                  }`}
+                  className="w-full h-14 text-lg font-medium"
                 >
-                  {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
+                  {plan.price === "Custom" ? "Contact Team" : "Start now"}
                 </Button>
               </div>
             </FadeIn>

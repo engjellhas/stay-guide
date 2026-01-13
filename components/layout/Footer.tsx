@@ -2,70 +2,75 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-background text-sm">
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold">
-                S
-              </div>
-              <span className="text-xl font-bold tracking-tight">
+    <footer className="bg-white border-t border-black/5 py-24">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-24">
+          <div className="col-span-2 lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 mb-6">
+              <span className="text-2xl font-bold tracking-tight text-[#222222]">
                 StayGuide
               </span>
             </Link>
-            <p className="text-muted-foreground">
-              The voice-first AI concierge that handles guest questions
-              instantly, 24/7.
+            <p className="text-secondary text-base max-w-xs leading-relaxed">
+              The #1 AI voice concierge for vacation rentals. Helping hosts
+              provide 5-star guest experiences on autopilot.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Product</h3>
-            <ul className="space-y-2 text-muted-foreground">
+            <h3 className="font-semibold text-[#222222] mb-6">Product</h3>
+            <ul className="space-y-4 text-secondary">
               <li>
-                <Link href="#features" className="hover:text-foreground">
+                <Link
+                  href="#features"
+                  className="hover:text-[#222222] transition-colors"
+                >
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="#how-it-works" className="hover:text-foreground">
-                  How it Works
-                </Link>
-              </li>
-              <li>
-                <Link href="#pricing" className="hover:text-foreground">
+                <Link
+                  href="#pricing"
+                  className="hover:text-[#222222] transition-colors"
+                >
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground">
-                  Integrations
+                <Link
+                  href="#how-it-works"
+                  className="hover:text-[#222222] transition-colors"
+                >
+                  How it works
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Company</h3>
-            <ul className="space-y-2 text-muted-foreground">
+            <h3 className="font-semibold text-[#222222] mb-6">Company</h3>
+            <ul className="space-y-4 text-secondary">
               <li>
-                <Link href="#" className="hover:text-foreground">
-                  About Us
+                <Link
+                  href="#"
+                  className="hover:text-[#222222] transition-colors"
+                >
+                  About
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground">
+                <Link
+                  href="#"
+                  className="hover:text-[#222222] transition-colors"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-foreground">
+                <Link
+                  href="#"
+                  className="hover:text-[#222222] transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -73,43 +78,51 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Legal</h3>
-            <ul className="space-y-2 text-muted-foreground">
+            <h3 className="font-semibold text-[#222222] mb-6">Legal</h3>
+            <ul className="space-y-4 text-secondary">
               <li>
-                <Link href="#" className="hover:text-foreground">
-                  Privacy Policy
+                <Link
+                  href="#"
+                  className="hover:text-[#222222] transition-colors"
+                >
+                  Privacy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground">
-                  Terms of Service
+                <Link
+                  href="#"
+                  className="hover:text-[#222222] transition-colors"
+                >
+                  Terms
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground">
-                  Cookie Policy
+                <Link
+                  href="#"
+                  className="hover:text-[#222222] transition-colors"
+                >
+                  Cookies
                 </Link>
               </li>
             </ul>
-            <div className="mt-8 flex gap-4 text-muted-foreground">
-              {/* Social Icons Placeholders */}
-              <a href="#" className="hover:text-foreground">
-                Twitter
-              </a>
-              <a href="#" className="hover:text-foreground">
-                LinkedIn
-              </a>
-              <a href="#" className="hover:text-foreground">
-                Instagram
-              </a>
-            </div>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/5 pt-8 text-center text-muted-foreground/60">
+        <div className="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-secondary text-sm">
           <p>
-            &copy; {new Date().getFullYear()} StayGuide. All rights reserved.
+            © {new Date().getFullYear()} StayGuide Inc. All rights reserved.
           </p>
+          <div className="flex gap-8">
+            <a href="#" className="hover:text-[#222222] transition-colors">
+              Twitter
+            </a>
+            <a href="#" className="hover:text-[#222222] transition-colors">
+              LinkedIn
+            </a>
+            <a href="#" className="hover:text-[#222222] transition-colors">
+              Instagram
+            </a>
+          </div>
         </div>
       </div>
     </footer>

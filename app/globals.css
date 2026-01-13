@@ -4,21 +4,22 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Airbnb-inspired Light Mode */
+  /* Airbnb 2025-inspired Palette */
   --background: #ffffff;
   --foreground: #222222;
+  --foreground-muted: #6a6a6a;
 
   --primary: #ff385c;
   --primary-foreground: #ffffff;
 
-  --secondary: #f7f7f7;
+  --secondary: #ffffff;
   --secondary-foreground: #222222;
 
   --accent: #f7f7f7;
   --accent-foreground: #222222;
 
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
+  --muted: #f7f7f7;
+  --muted-foreground: #6a6a6a;
 
   --card: #ffffff;
   --card-foreground: #222222;
@@ -26,31 +27,27 @@
   --popover: #ffffff;
   --popover-foreground: #222222;
 
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #ff385c;
+  --border: #ebebeb;
+  --input: #dddddd;
+  --ring: #222222;
 
-  --destructive: #ef4444;
+  --destructive: #c13515;
   --destructive-foreground: #ffffff;
 
-  --radius: 0.75rem;
+  --radius: 2rem; /* Airy, soft corners (32px) */
 
-  /* Chart colors adapted to palette */
-  --chart-1: #ff385c;
-  --chart-2: #d90b3e;
-  --chart-3: #ff8fa3;
-  --chart-4: #ffafbd;
-  --chart-5: #ffe0e6;
+  /* Periwinkle Halo */
+  --halo-glow: rgba(189, 211, 255, 0.4);
 
   /* Sidebar defaults */
-  --sidebar: #f7f7f7;
+  --sidebar: #ffffff;
   --sidebar-foreground: #222222;
   --sidebar-primary: #ff385c;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #e5e5e5;
+  --sidebar-accent: #f7f7f7;
   --sidebar-accent-foreground: #222222;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: #ff385c;
+  --sidebar-border: #ebebeb;
+  --sidebar-ring: #222222;
 }
 
 @theme inline {
@@ -141,21 +138,45 @@ body {
   animation: fade-in-up 0.8s ease-out forwards;
 }
 
-/* Airbnb-style Utilities (Restored) */
+/* Airbnb-style Utilities */
 .glass {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .glass-card {
   background: #ffffff;
-  border: 1px solid #dddddd;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid #ebebeb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius);
 }
 
-.text-gradient {
-  color: #ff385c;
+.halo {
+  background: radial-gradient(
+    circle at center,
+    var(--halo-glow) 0%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.title-display {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.text-secondary {
+  color: var(--foreground-muted);
 }
 
 /* Dark mode overrides (optional fallback) */

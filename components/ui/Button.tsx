@@ -19,17 +19,18 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-95";
+    "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
 
   const variants = {
     primary:
-      "bg-primary text-primary-foreground hover:bg-opacity-90 shadow-md hover:shadow-lg transition-all",
-    secondary: "bg-white border border-black text-black hover:bg-gray-50",
+      "bg-primary text-primary-foreground hover:brightness-110 shadow-sm transition-all",
+    secondary:
+      "bg-white border border-[#222222] text-[#222222] hover:bg-gray-50",
     glass:
-      "bg-white/80 backdrop-blur-md text-foreground hover:bg-white border border-gray-200 shadow-sm",
-    ghost: "hover:bg-gray-100 text-foreground/80 hover:text-foreground",
+      "bg-white/70 backdrop-blur-md text-[#222222] hover:bg-white border border-black/5 shadow-sm",
+    ghost: "hover:bg-gray-50 text-[#222222] hover:text-black",
     outline:
-      "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+      "border border-[#dddddd] bg-white text-[#222222] hover:bg-gray-50 hover:border-[#222222]",
   };
 
   const sizes = {

@@ -1,103 +1,122 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import BlurText from "@/components/BlurText";
 import FadeIn from "@/components/animations/FadeIn";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32 lg:min-h-screen flex items-center">
-      {/* Dreamy Gradient Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 -z-10"
-        style={{ backgroundImage: "url('/assets/dreamy-bg.png')" }}
-      />
-      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] -z-10" />
-
-      {/* Decorative blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200/30 rounded-full blur-[100px] -z-10 mix-blend-multiply" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-lime-200/30 rounded-full blur-[100px] -z-10 mix-blend-multiply" />
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32 lg:min-h-screen flex items-center bg-white">
+      {/* Signature Periwinkle Halo */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] halo opacity-60 pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="flex flex-col items-center text-center">
           {/* Left Column: Text Content */}
-          <FadeIn
-            direction="right"
-            className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
-          >
-            <div className="inline-flex items-center rounded-full border border-primary/10 bg-white/50 backdrop-blur-md px-4 py-1.5 text-sm font-medium text-primary shadow-sm mb-8">
-              <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+          <FadeIn direction="up" className="max-w-4xl mx-auto">
+            <div className="inline-flex items-center rounded-full border border-black/5 bg-gray-50/50 backdrop-blur-sm px-4 py-1 text-sm font-medium text-[#222222] mb-10">
+              <span className="flex h-1.5 w-1.5 rounded-full bg-[#222222] mr-2"></span>
               The #1 AI Concierge for Hosts
             </div>
 
-            <div className="relative group">
+            <div className="relative mb-8 flex justify-center w-full max-w-4xl mx-auto overflow-visible">
               <BlurText
-                text="Maximize Your Rental Potential"
+                text="The Airbnb Host's Private Assistant"
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1] mb-6 drop-shadow-sm"
+                className="text-5xl md:text-8xl title-display leading-[1.05] tracking-tight text-[#222222] text-center justify-center w-full"
               />
-              <div className="absolute -z-10 -top-8 -left-8 w-24 h-24 bg-yellow-200/50 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500" />
             </div>
 
-            <p className="text-xl text-gray-600 leading-relaxed font-normal mb-10 max-w-lg mx-auto lg:mx-0">
-              Automate guest communication, boost reviews, and save 20+ hours a
-              week with your own AI voice assistant.
+            <p className="text-xl md:text-2xl text-secondary leading-relaxed font-normal mb-12 max-w-2xl mx-auto">
+              StayGuide handles your guest messages on autopilot, so you can
+              enjoy your life while your reviews soar.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
               <Button
                 size="lg"
-                className="h-16 px-8 text-lg font-semibold bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20 rounded-full transition-all hover:-translate-y-1 w-full sm:w-auto"
+                className="h-14 px-10 text-lg font-medium bg-[#222222] hover:bg-black text-white rounded-full transition-all w-full sm:w-auto"
               >
-                Start Free Trial
+                Start free trial
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="h-16 px-8 text-lg font-semibold border-gray-200 bg-white/80 hover:bg-white text-gray-800 rounded-full transition-all hover:shadow-lg w-full sm:w-auto"
+                className="h-14 px-10 text-lg font-medium border-[#222222] bg-white text-[#222222] rounded-full transition-all w-full sm:w-auto"
               >
-                Watch Demo
+                Watch the film
               </Button>
             </div>
 
-            <div className="mt-12 flex items-center justify-center lg:justify-start gap-4 text-sm font-medium text-gray-500">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
+            <div className="flex flex-col items-center gap-4 text-sm font-medium text-gray-400">
+              <div className="flex -space-x-2">
+                {[1, 2, 3, 4, 5].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 shadow-sm overflow-hidden bg-cover bg-center"
+                    className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden bg-cover bg-center"
                     style={{
                       backgroundImage: `url('https://i.pravatar.cc/100?img=${
-                        i + 10
+                        i + 20
                       }')`,
                     }}
                   />
                 ))}
               </div>
-              <div className="flex flex-col items-start">
-                <div className="flex items-center gap-1 text-yellow-500">
-                  {"★".repeat(5)}
-                </div>
-                <span className="text-xs">Trusted by 2,000+ hosts</span>
-              </div>
+              <span className="text-[13px] tracking-tight">
+                Trusted by 2,000+ Superhosts worldwide
+              </span>
             </div>
           </FadeIn>
 
-          {/* Right Column: Interactive UI Mockup */}
+          {/* Device Mockup Section */}
           <FadeIn
-            direction="left"
-            delay={0.2}
-            className="relative z-10 w-full max-w-[500px] lg:max-w-none mx-auto"
+            direction="up"
+            delay={0.4}
+            className="w-full max-w-5xl mt-24 relative"
           >
-            <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[600px] w-full">
-              {/* Glass Dashboard Container */}
-              <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-indigo-500/10 border border-white/60 backdrop-blur-xl bg-white/80 transform hover:scale-[1.01] transition-all duration-700 flex flex-col">
+            {/* Soft shadow/glow underneath the mockup */}
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-20 bg-black/5 blur-3xl -z-10" />
+
+            <div className="grid md:grid-cols-12 gap-8 items-stretch">
+              {/* Main App Mockup */}
+              <div className="md:col-span-8 relative h-[500px] md:h-[600px] w-full rounded-[3rem] overflow-hidden border border-black/5 bg-white shadow-2xl flex flex-col">
                 {/* Header Strip */}
-                <div className="p-5 border-b border-gray-100 flex items-center justify-between bg-white/40">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div className="p-6 border-b border-gray-100 flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center border border-black/5">
+                      <span className="text-lg font-bold">SG</span>
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-[#222222] text-base">
+                        Concierge Active
+                      </h3>
+                      <p className="text-xs text-green-600 font-medium flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                        8 Guest Inquiries Handled Today
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Conversation Feed */}
+                <div className="flex-1 p-8 space-y-8 overflow-hidden bg-white">
+                  {/* Guest Entry */}
+                  <div className="flex gap-4 max-w-[80%]">
+                    <div className="w-10 h-10 rounded-full bg-gray-100 shrink-0 border border-black/5" />
+                    <div className="bg-gray-100/50 p-5 rounded-[2rem] rounded-tl-none">
+                      <p className="text-base text-[#222222] leading-relaxed text-left">
+                        Hey! How do I work the induction stove? We&apos;re
+                        trying to make breakfast.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* AI Response Card */}
+                  <div className="flex gap-4 max-w-[85%] ml-auto flex-row-reverse">
+                    <div className="w-10 h-10 rounded-full bg-[#222222] flex items-center justify-center shrink-0">
                       <svg
-                        className="w-6 h-6 text-primary"
+                        className="w-5 h-5 text-white"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -106,127 +125,68 @@ export function Hero() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                          d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
                         />
                       </svg>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 text-sm">
-                        AI Concierge
-                      </h3>
-                      <p className="text-[10px] text-green-500 font-bold flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                        Monitoring Beach Loft
-                      </p>
-                    </div>
-                  </div>
-                  <div className="hidden sm:flex -space-x-2">
-                    {[33, 34, 35].map((img) => (
-                      <div
-                        key={img}
-                        className="w-8 h-8 rounded-full border-2 border-white bg-gray-100 overflow-hidden shadow-sm"
-                      >
-                        <img
-                          src={`https://i.pravatar.cc/100?img=${img}`}
-                          alt="User"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Conversation Feed */}
-                <div className="flex-1 p-6 space-y-6 overflow-hidden bg-linear-to-b from-transparent to-gray-50/20">
-                  {/* Guest Entry */}
-                  <div className="flex gap-3 max-w-[85%] animate-fadeIn">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 shrink-0 overflow-hidden border border-blue-200">
-                      <img
-                        src="https://i.pravatar.cc/100?img=33"
-                        alt="Guest"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl rounded-tl-none shadow-xs border border-gray-100">
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        Hi! What's the Wi-Fi password and checkout time?
-                      </p>
-                      <span className="text-[10px] text-gray-400 mt-2 block font-medium">
-                        Guest • 11:30 AM
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* AI Response Card */}
-                  <div className="flex gap-3 max-w-[92%] ml-auto flex-row-reverse animate-fadeIn [animation-delay:0.2s]">
-                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0 border border-primary/30">
-                      <span className="text-[10px] font-black text-primary">
-                        AI
-                      </span>
-                    </div>
-                    <div className="bg-primary text-white p-4 rounded-2xl rounded-tr-none shadow-lg shadow-primary/20 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full -mr-8 -mt-8 blur-2xl" />
-                      <p className="text-sm leading-relaxed relative z-10">
-                        Welcome! 🌊
+                    <div className="bg-white border border-black/5 p-6 rounded-[2rem] rounded-tr-none shadow-xl">
+                      <p className="text-base text-[#222222] leading-relaxed text-left">
+                        Good morning! 🍳 <br />
                         <br />
-                        <br />• <span className="font-semibold">
-                          Wi-Fi:
-                        </span>{" "}
-                        BeachGlow_Host
-                        <br />• <span className="font-semibold">
-                          Pass:
-                        </span>{" "}
-                        StayHappy2026
-                        <br />• <span className="font-semibold">
-                          Checkout:
-                        </span>{" "}
-                        11:00 AM
+                        To use the induction stove, first place your pot on the
+                        burner, then press the power button on the front right.{" "}
+                        <br />
+                        <br />
+                        <span className="font-semibold block mt-2 underline cursor-pointer">
+                          Watch video guide
+                        </span>
                       </p>
-                      <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between">
-                        <span className="text-[9px] font-medium opacity-80">
-                          Ref: House Manual
-                        </span>
-                        <span className="text-[9px] font-bold bg-white/20 px-1.5 py-0.5 rounded">
-                          INSTANT
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Typing Indicator */}
-                  <div className="flex gap-3 opacity-30 mt-4">
-                    <div className="w-8 h-8 rounded-full bg-gray-200" />
-                    <div className="bg-gray-100 h-10 w-20 rounded-2xl flex items-center justify-center gap-1">
-                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" />
-                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce [animation-delay:0.2s]" />
-                      <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce [animation-delay:0.4s]" />
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Stats Tray */}
-                <div className="px-6 py-5 bg-white border-t border-gray-50 flex items-center justify-around">
+                <div className="px-8 py-6 bg-gray-50/50 border-t border-gray-100 flex items-center justify-around">
                   <div className="text-center">
-                    <p className="text-[10px] uppercase tracking-tight text-gray-400 font-bold mb-1">
+                    <p className="text-xs text-gray-400 font-medium mb-1">
                       Time Saved
                     </p>
-                    <p className="text-lg font-extrabold text-primary">
-                      12h/wk
-                    </p>
+                    <p className="text-2xl font-semibold text-[#222222]">24h</p>
                   </div>
-                  <div className="w-px h-8 bg-gray-100" />
+                  <div className="w-px h-10 bg-gray-200" />
                   <div className="text-center">
-                    <p className="text-[10px] uppercase tracking-tight text-gray-400 font-bold mb-1">
-                      Rating
+                    <p className="text-xs text-gray-400 font-medium mb-1">
+                      Guest Review
                     </p>
-                    <p className="text-lg font-extrabold text-gray-900">5.0★</p>
+                    <p className="text-2xl font-semibold text-[#222222]">
+                      5.0★
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating accents */}
-              <div className="absolute top-1/4 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute bottom-1/4 -left-12 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000" />
+              {/* Sidebar with Product Image */}
+              <div className="md:col-span-4 flex flex-col">
+                <div className="flex-1 rounded-[3rem] overflow-hidden border border-black/5 bg-white shadow-2xl group relative min-h-[500px]">
+                  <Image
+                    src="/images/voice-hub.png"
+                    alt="StayGuide Voice Hub"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none" />
+                  <div className="absolute bottom-10 left-10 right-10">
+                    <div className="inline-flex items-center rounded-full bg-white/90 backdrop-blur-md px-5 py-2 text-base font-semibold text-[#222222] shadow-sm mb-4">
+                      Voice Concierge ✨
+                    </div>
+                    <p className="text-white text-xl font-medium max-w-[240px] leading-snug">
+                      &ldquo;Hey StayGuide, how do I use the induction
+                      stove?&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </FadeIn>
         </div>
