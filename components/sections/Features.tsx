@@ -3,32 +3,32 @@ import FadeIn from "../animations/FadeIn";
 import { Button } from "@/components/ui/Button";
 
 export function Features() {
-  const secondaryFeatures = [
-    {
-      title: "Smart Home Sync",
-      description:
-        "Connects with Nest, Ecobee, and Yale. Control temperature and locks with voice.",
-      icon: "⚡️",
-    },
-    {
-      title: "Local Recommendations",
-      description:
-        "Curate your own guide to the best coffee, food, and hidden gems in the neighborhood.",
-      icon: "📍",
-    },
-    {
-      title: "Emergency Alerts",
-      description:
-        "Instant SMS notifications when guests casually mention 'leak', 'fire', or 'locked out'.",
-      icon: "🚨",
-    },
-    {
-      title: "Multi-Language",
-      description:
-        "Instant translation for international guests. Speak in English, they hear it in Spanish.",
-      icon: "🌍",
-    },
-  ];
+  // const secondaryFeatures = [
+  //   {
+  //     title: "Smart Home Sync",
+  //     description:
+  //       "Connects with Nest, Ecobee, and Yale. Control temperature and locks with voice.",
+  //     icon: "⚡️",
+  //   },
+  //   {
+  //     title: "Local Recommendations",
+  //     description:
+  //       "Curate your own guide to the best coffee, food, and hidden gems in the neighborhood.",
+  //     icon: "📍",
+  //   },
+  //   {
+  //     title: "Emergency Alerts",
+  //     description:
+  //       "Instant SMS notifications when guests casually mention 'leak', 'fire', or 'locked out'.",
+  //     icon: "🚨",
+  //   },
+  //   {
+  //     title: "Multi-Language",
+  //     description:
+  //       "Instant translation for international guests. Speak in English, they hear it in Spanish.",
+  //     icon: "🌍",
+  //   },
+  // ];
 
   return (
     <section id="features" className="py-32 bg-white overflow-hidden">
@@ -135,7 +135,7 @@ export function Features() {
         </div>
 
         {/* Secondary Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {secondaryFeatures.map((feature, index) => (
             <FadeIn key={index} delay={index * 0.1} direction="up">
               <div className="p-8 rounded-[2rem] border border-black/5 bg-white hover:bg-gray-50/50 transition-all duration-300 group h-full">
@@ -151,7 +151,7 @@ export function Features() {
               </div>
             </FadeIn>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
