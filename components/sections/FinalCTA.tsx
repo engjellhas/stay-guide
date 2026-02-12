@@ -23,9 +23,9 @@ export function FinalCTA() {
               <Button variant="primary" className="h-16 px-12 text-xl">
                 Get Started
               </Button>
-              <Button variant="outline" className="h-16 px-12 text-xl">
+              {/* <Button variant="outline" className="h-16 px-12 text-xl">
                 Watch the film
-              </Button>
+              </Button> */}
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-10 text-secondary font-medium">

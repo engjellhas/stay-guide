@@ -12,9 +12,9 @@ export function Solution() {
             delay={0.2}
             className="order-2 lg:order-1 relative"
           >
-            <div className="relative rounded-[3rem] overflow-hidden border border-black/5 bg-white shadow-2xl group min-h-[500px] lg:min-h-[650px]">
+            <div className="w-2/3 mx-auto relative rounded-[3rem] overflow-hidden border border-black/5 bg-white shadow-2xl group min-h-[500px] lg:min-h-[650px]">
               <Image
-                src="/images/messaging-mockup.png"
+                src="/images/messaging-mockup.jpeg"
                 alt="StayGuide Messaging AI"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

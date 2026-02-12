@@ -106,14 +106,13 @@ export function Features() {
           <FadeIn direction="up">
             <div className="rounded-[3rem] p-8 md:p-16 lg:p-24 overflow-hidden border border-black/5 bg-[#F7F7F7]">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="relative h-[300px] lg:h-[500px] flex items-center justify-center order-2 lg:order-1">
-                  <div className="w-full aspect-square max-w-[400px] rounded-full halo opacity-40 absolute -z-10" />
-                  <div className="w-full h-full rounded-[3rem] overflow-hidden border border-black/5 shadow-2xl relative">
+                <div className="relative h-[300px] lg:h-[300px] flex items-center justify-center order-2 lg:order-1">
+                  <div className="w-full h-full rounded-[3rem] overflow-hidden relative">
                     <Image
-                      src="/images/analytics.png"
+                      src="/images/analytics.jpeg"
                       alt="StayGuide Analytics Dashboard"
                       fill
-                      className="object-cover"
+                      className="object-cover rounded-[3rem]!"
                     />
                   </div>
                 </div>

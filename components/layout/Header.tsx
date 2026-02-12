@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { ArrowRightIcon } from "lucide-react";
 
 export function Header() {
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-      <header className="pointer-events-auto w-full max-w-5xl rounded-full border border-gray-200/50 bg-white/70 backdrop-blur-xl shadow-lg shadow-gray-200/20 supports-[backdrop-filter]:bg-white/60">
+      <header className="pointer-events-auto w-full max-w-xl rounded-full border border-gray-200/50 bg-white/70 backdrop-blur-xl shadow-lg shadow-gray-200/20 supports-[backdrop-filter]:bg-white/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg text-primary transition-transform group-hover:scale-105">
@@ -26,7 +27,7 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-1">
+          {/* <nav className="hidden md:flex items-center gap-1">
             <Link
               href="#features"
               className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100/50 rounded-full transition-all"
@@ -51,7 +52,7 @@ export function Header() {
             >
               FAQ
             </Link>
-          </nav>
+          </nav> */}
 
           <div className="flex items-center gap-2">
             <Link
@@ -63,9 +64,9 @@ export function Header() {
             <Button
               size="sm"
               variant="primary"
-              className="rounded-full bg-[#FF385C] hover:bg-[#D90B3E] shadow-md shadow-[#FF385C]/20 border-none"
+              className="rounded-full bg-[#222222] hover:bg-[#3e3e3e] shadow-md shadow-[#222222]/20 border-none group"
             >
-              Get Started
+              Get Started <ArrowRightIcon className="group-hover:rotate-3 transition-transform duration-300 w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:text-primary" />
             </Button>
           </div>
         </div>
